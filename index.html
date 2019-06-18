@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <title>Practice</title>
+</head>
+
+<body>
+    <div id="app">
+
+        
+        <input type="text" v-on:input="changeTitle"><hr>
+        <div>{{title}}</div>
+        <div> {{ printFunction() }}</div>
+
+        <!-- A href in Vue -->
+        <a v-bind:href="website"> My website</a>
+
+        <!-- Use direct html -->
+        <div v-html="html"></div>
+        <hr>
+
+
+        <!-- Assingment 1-->
+        <div> Enter Name: <input type="text" v-on:input="changeName"> </div>
+        <h1>Hello My name is .... <span style="color:rgb(0, 117, 133)">{{name}}</span></h1>
+        <h2 v-once> Random Number: {{ randomNumber() }}</h2>
+        <hr>
+
+        <!--Button click counter-->
+        <div ></div>
+        <button v-on:click="increase" >Click!</button>
+        <div> {{counter}}</div>
+        <hr>
+
+        <!--Get cordinate of mouse click-->
+        <div v-on:mousemove="updateCordinate">Coordiates: x= {{x}} y= {{y}}<br>
+            <span v-on:mousemove.stop="">STOP</span>
+        </div>
+        <hr>
+
+        <!--Key up submit-->
+        <input v-on:keyup.enter="alertMe">
+        <hr>
+
+
+        <!--Assignment 2-->
+        <div>
+            <button v-on:click="alertButton">Alert Click!</button>
+        </div>
+        <hr>
+
+        <div>
+            <input v-on:keyup="keydownOutput" placeholder="Type something..."/>
+            Keydown Output: {{output_keydown}}
+        </div>
+        <hr>
+
+
+        <!---Change all name fields-->
+        <div >
+            <input v-on:input="changeStoryName"/>
+            <p>Hello My name is {{name2}} and this is my story</p>
+            <p>One day {{name2}} was walking to the park an saw humoungous bear and decided to fight it </p>
+            <p> Then {{name2}} died the END</p>
+        </div>
+
+
+        <!--Computer Object-->
+        <button v-on:click="increase">Increase</button>
+        <button v-on:click="decrease">Decrease</button>
+        <div>Count: {{counter2}}</div>
+        <div> {{counterOutput}}</div>
+
+
+    </div>
+    
+</body>
+
+<script src="vue.js"></script>
+<script src="app.js"></script>
+</html>
